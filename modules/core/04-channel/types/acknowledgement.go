@@ -37,7 +37,7 @@ func NewErrorAcknowledgement(err error) Acknowledgement {
 
 	return Acknowledgement{
 		Response: &Acknowledgement_Error{
-			Error: fmt.Sprintf("ABCI code: %d: %s", code, ackErrorString),
+			Error: fmt.Sprintf("ABCI code: %d: %s", code, ackErrorString, err.Error()),
 		},
 	}
 }
